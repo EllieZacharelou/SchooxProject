@@ -22,9 +22,9 @@ driver.find_element(By.CSS_SELECTOR, "a[href='/6/steps']").click()
 driver.find_element(By.CSS_SELECTOR, ".enroll").click()
 
 # COMPLETE ALL THE STEPS
-step_list = ["(//b[text()='Complete'])[1]", "(//b[text()='Complete'])[2]", "(//b[text()='Complete'])[3]", "(//b[text()='Complete'])[4]"]
+step_list = ["1", "2", "3", "4"]
 for step in step_list:
-    driver.find_element(By.XPATH, step).click()
+    driver.find_element(By.XPATH, "(//b[text()='Complete'])["+step+"]").click()
     alert = driver.switch_to.alert
     alert.accept()
 
